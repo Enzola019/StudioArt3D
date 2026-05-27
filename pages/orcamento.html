@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Orçamento | Studio Arte 3D</title>
+
+  <link rel="stylesheet" href="../css/style.css">
+
+  <style>
+
+    body{
+      background:#050816;
+      font-family:Montserrat,sans-serif;
+      color:white;
+      margin:0;
+      padding:0;
+    }
+
+    .form-page{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:40px 20px;
+    }
+
+    .form-box{
+      width:100%;
+      max-width:700px;
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.1);
+      backdrop-filter:blur(10px);
+      border-radius:20px;
+      padding:40px;
+    }
+
+    .form-box h1{
+      font-size:38px;
+      margin-bottom:10px;
+    }
+
+    .form-box p{
+      opacity:0.7;
+      margin-bottom:30px;
+    }
+
+    .input-group{
+      margin-bottom:20px;
+    }
+
+    .input-group label{
+      display:block;
+      margin-bottom:8px;
+      font-weight:600;
+    }
+
+    .input-group input,
+    .input-group textarea{
+      width:100%;
+      padding:16px;
+      border:none;
+      border-radius:12px;
+      background:#111827;
+      color:white;
+      font-size:16px;
+      outline:none;
+    }
+
+    textarea{
+      resize:none;
+      height:180px;
+    }
+
+    .btn-enviar{
+      width:100%;
+      padding:18px;
+      border:none;
+      border-radius:14px;
+      background:#22c55e;
+      color:white;
+      font-size:18px;
+      font-weight:700;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .btn-enviar:hover{
+      background:#16a34a;
+      transform:translateY(-2px);
+    }
+
+    .mensagem{
+      margin-top:25px;
+      background:#16a34a;
+      padding:18px;
+      border-radius:12px;
+      display:none;
+      text-align:center;
+      font-weight:600;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+<section class="form-page">
+
+  <div class="form-box">
+
+    <h1>Solicitar Orçamento</h1>
+
+    <p>Preencha as informações abaixo.</p>
+
+    <form id="formOrcamento">
+
+      <div class="input-group">
+        <label>Nome</label>
+        <input type="text" required>
+      </div>
+
+      <div class="input-group">
+        <label>Telefone</label>
+        <input type="tel" required>
+      </div>
+
+      <div class="input-group">
+        <label>Orçamento</label>
+        <textarea placeholder="Descreva o que deseja..." required></textarea>
+      </div>
+
+      <button type="submit" class="btn-enviar">
+        Enviar Orçamento
+      </button>
+
+    </form>
+
+    <div class="mensagem" id="mensagem">
+
+      Orçamento encaminhado para equipe técnica, obrigado!!
+
+    </div>
+
+  </div>
+
+</section>
+
+<script>
+
+const form = document.getElementById("formOrcamento");
+const mensagem = document.getElementById("mensagem");
+
+form.addEventListener("submit", function(e){
+
+  e.preventDefault();
+
+  mensagem.style.display = "block";
+
+  form.reset();
+
+});
+
+</script>
+
+</body>
+</html>
